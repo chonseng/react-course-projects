@@ -1,0 +1,36 @@
+console.log("App.js is running");
+
+// JSX
+var app = {
+	title: "Indecision App",
+	subtile: "whatever",
+}
+var template = (
+	<div>
+		<h1>{app.title}</h1>
+		<p>{app.subtile}</p>
+		<ol>
+			<li>Item one</li>
+			<li>Item two</li>
+		</ol>
+	</div>
+);
+
+var user = {
+	name: "Peter",
+	age: 20,
+	location: 'USA'
+}
+var templateTwo = (
+	<div>
+		<h1>{user.name}</h1>
+		<p>Age: {user.age}</p>
+		<p>Location: {user.location}</p>
+	</div>
+);
+
+
+var appRoot = document.getElementById('app');
+
+
+ReactDOM.render(template, appRoot);
