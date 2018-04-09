@@ -1,81 +1,20 @@
 "use strict";
 
-console.log("App.js is running");
-
-// JSX
-var app = {
-	title: "Indecision App",
-	subtile: "whatever subtitle",
-	options: ['One', 'Two']
-};
-var template = React.createElement(
-	"div",
-	null,
-	React.createElement(
-		"h1",
-		null,
-		app.title
-	),
-	app.subtile && React.createElement(
-		"p",
-		null,
-		app.subtile
-	),
-	React.createElement(
-		"p",
-		null,
-		app.options.length > 0 ? "Here are your options" : "No options"
-	),
-	React.createElement(
-		"ol",
-		null,
-		React.createElement(
-			"li",
-			null,
-			"Item one"
-		),
-		React.createElement(
-			"li",
-			null,
-			"Item two"
-		)
-	)
-);
-
-var user = {
-	name: "Peter",
-	age: 20,
-	location: "us"
+var square = function square(x) {
+	return x * x;
 };
 
-function getLocation(location) {
-	if (location) {
-		return React.createElement(
-			"p",
-			null,
-			"Location: ",
-			location
-		);
-	}
-}
+// const squareArrow = (x) => {
+// 	return x * x;
+// }
 
-var templateTwo = React.createElement(
-	"div",
-	null,
-	React.createElement(
-		"h1",
-		null,
-		user.name ? user.name : "Anonymous"
-	),
-	user.age && user.age >= 18 && React.createElement(
-		"p",
-		null,
-		"Age: ",
-		user.age
-	),
-	getLocation(user.location)
-);
+var squareArrow = function squareArrow(x) {
+	return x * x;
+};
 
-var appRoot = document.getElementById('app');
+console.log(squareArrow(9));
 
-ReactDOM.render(template, appRoot);
+var getFirstName = function getFirstName(name) {
+	return name.split(' ')[0];
+};
+console.log(getFirstName("Peter Che"));
