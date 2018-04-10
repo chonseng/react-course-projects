@@ -20,24 +20,30 @@ const template = (
 
 let count = 0;
 const addOne = () => {
-	console.log('addOne');
+	count += 1;
+	renderCounterApp();
 };
 const minusOne = () => {
-	console.log('minusOne');
+	count -= 1;
+	renderCounterApp();
 };
 const reset = () => {
-	console.log('reset');
+	count = 0;
+	renderCounterApp();
 };
-const templateTwo = (
-	<div>
-		<h1>Count: {count}</h1>
-		<button onClick={addOne}>+1</button>
-		<button onClick={minusOne}>-1</button>
-		<button onClick={reset}>reset</button>
-	</div>
-);
 
 const appRoot = document.getElementById('app');
 
+const renderCounterApp = () => {
+	const templateTwo = (
+		<div>
+			<h1>Count: {count}</h1>
+			<button onClick={addOne}>+1</button>
+			<button onClick={minusOne}>-1</button>
+			<button onClick={reset}>reset</button>
+		</div>
+	);
+	ReactDOM.render(templateTwo, appRoot);
+}
 
-ReactDOM.render(templateTwo, appRoot);
+renderCounterApp();
