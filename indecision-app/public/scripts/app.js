@@ -1,36 +1,83 @@
-'use strict';
+"use strict";
 
-// Arguments object - no longer bound with arrow function
-var add = function add(a, b) {
-	// console.log(arguments);
-	return a + b;
+console.log("App.js is running");
+
+// JSX
+var app = {
+	title: "Indecision App",
+	subtile: "whatever subtitle",
+	options: ['One', 'Two']
 };
-console.log(add(55, 1, 101));
+var template = React.createElement(
+	"div",
+	null,
+	React.createElement(
+		"h1",
+		null,
+		app.title
+	),
+	app.subtile && React.createElement(
+		"p",
+		null,
+		app.subtile
+	),
+	React.createElement(
+		"p",
+		null,
+		app.options.length > 0 ? "Here are your options" : "No options"
+	),
+	React.createElement(
+		"ol",
+		null,
+		React.createElement(
+			"li",
+			null,
+			"Item one"
+		),
+		React.createElement(
+			"li",
+			null,
+			"Item two"
+		)
+	)
+);
 
-// this keyword - no longer bound
-var user = {
-	name: 'Peter',
-	cities: ['Philadelphia', 'New York', 'Dublin'],
-	printPlacesLived: function printPlacesLived() {
-		var _this = this;
-
-		return this.cities.map(function (city) {
-			return _this.name + ' has lived in ' + city + '!';
-		});
-	}
+var count = 0;
+var addOne = function addOne() {
+	console.log('addOne');
 };
-console.log(user.printPlacesLived());
-
-// Challenge
-var multiplier = {
-	numbers: [1, 2, 3, 4],
-	multiplyBy: 5,
-	multiply: function multiply() {
-		var _this2 = this;
-
-		return this.numbers.map(function (n) {
-			return n * _this2.multiplyBy;
-		});
-	}
+var minusOne = function minusOne() {
+	console.log('minusOne');
 };
-console.log(multiplier.multiply());
+var setupReset = function setupReset() {
+	console.log('reset');
+};
+var templateTwo = React.createElement(
+	"div",
+	null,
+	React.createElement(
+		"h1",
+		null,
+		"Count: ",
+		count
+	),
+	React.createElement(
+		"button",
+		{ onClick: addOne },
+		"+1"
+	),
+	React.createElement(
+		"button",
+		{ onClick: minusOne },
+		"-1"
+	),
+	React.createElement(
+		"button",
+		{ onClick: setupReset },
+		"reset"
+	)
+);
+
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);
