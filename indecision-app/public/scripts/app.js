@@ -49,7 +49,7 @@ var addOne = function addOne() {
 var minusOne = function minusOne() {
 	console.log('minusOne');
 };
-var setupReset = function setupReset() {
+var reset = function reset() {
 	console.log('reset');
 };
 var templateTwo = React.createElement(
@@ -73,7 +73,7 @@ var templateTwo = React.createElement(
 	),
 	React.createElement(
 		"button",
-		{ onClick: setupReset },
+		{ onClick: reset },
 		"reset"
 	)
 );

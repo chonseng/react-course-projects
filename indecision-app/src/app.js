@@ -25,7 +25,7 @@ const addOne = () => {
 const minusOne = () => {
 	console.log('minusOne');
 };
-const setupReset = () => {
+const reset = () => {
 	console.log('reset');
 };
 const templateTwo = (
@@ -33,7 +33,7 @@ const templateTwo = (
 		<h1>Count: {count}</h1>
 		<button onClick={addOne}>+1</button>
 		<button onClick={minusOne}>-1</button>
-		<button onClick={setupReset}>reset</button>
+		<button onClick={reset}>reset</button>
 	</div>
 );
 
