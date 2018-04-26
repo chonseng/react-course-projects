@@ -12,5 +12,6 @@ module.exports = {
 			test: /\.js$/,
 			exclude: /nodue_modules/
 		}]
-	}
+	},
+	devtool: 'cheap-module-eval-source-map'
 };
